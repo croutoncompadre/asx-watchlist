@@ -1,0 +1,27 @@
+services:
+  watchlist:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: watchlist-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+      - ./data:/app/data
+      - ./config.yaml:/app/config.yaml:ro
+    command: ["python", "asx_watchlist_bot.py"]
+
+  discord:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: discord-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+      - ./config.yaml:/app/config.yaml
+    command: ["python", "asx_discord_commands.py"]
