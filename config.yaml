@@ -2,3 +2,4 @@ log_level: DEBUG
 poll_interval_seconds: 300
 watchlist:
 - CSL
+- SUN

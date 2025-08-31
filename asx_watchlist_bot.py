@@ -158,10 +158,11 @@ def check_watchlist_changes():
     added = new_set - old_set
     removed = old_set - new_set
 
-    for ticker in added:
-        post_to_discord_change(f"✅ Added to watchlist: {ticker}")
-    for ticker in removed:
-        post_to_discord_change(f"❌ Removed from watchlist: {ticker}")
+    # Watchlist change notifications disabled to reduce noise
+    # for ticker in added:
+    #     post_to_discord_change(f"✅ Added to watchlist: {ticker}")
+    # for ticker in removed:
+    #     post_to_discord_change(f"❌ Removed from watchlist: {ticker}")
 
     cur.execute("DELETE FROM watchlist_snapshot")
     for ticker in new_set:
