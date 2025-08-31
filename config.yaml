@@ -1,12 +1,4 @@
-# config.yaml for ASX Watchlist Discord Bot
-log_level: DEBUG  # Options: DEBUG, INFO, WARNING, ERROR
-
-# Poll interval (seconds)
+log_level: DEBUG
 poll_interval_seconds: 300
-
-# Your watchlist (ASX codes)
 watchlist:
-  - CSL
-  - ANZ
-  - WBC
-  - BHP
+- CSL
