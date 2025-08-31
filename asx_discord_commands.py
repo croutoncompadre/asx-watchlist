@@ -111,7 +111,7 @@ async def add_ticker(interaction: discord.Interaction, ticker: str):
         )
         embed.add_field(
             name="📋 Current Watchlist",
-            value="\n".join(f"🔸 **{t}" for t in watchlist),
+            value="\n".join(f"🔸 **{t}**" for t in watchlist),
             inline=False
         )
         await interaction.response.send_message(embed=embed)
@@ -128,7 +128,7 @@ async def add_ticker(interaction: discord.Interaction, ticker: str):
     )
     embed.add_field(
         name=f"📊 Now Watching {len(watchlist)} Stock(s)",
-        value="\n".join(f"🔸 **{t}" for t in watchlist),
+        value="\n".join(f"🔸 **{t}**" for t in watchlist),
         inline=False
     )
     embed.set_footer(text="🎯 You'll now receive announcements for this stock")
@@ -166,7 +166,7 @@ async def remove_ticker(interaction: discord.Interaction, ticker: str):
         )
         embed.add_field(
             name="📋 Current Watchlist",
-            value="\n".join(f"🔸 **{t}" for t in watchlist) if watchlist else "No stocks in watchlist",
+            value="\n".join(f"🔸 **{t}**" for t in watchlist) if watchlist else "No stocks in watchlist",
             inline=False
         )
         await interaction.response.send_message(embed=embed)
@@ -185,7 +185,7 @@ async def remove_ticker(interaction: discord.Interaction, ticker: str):
     if watchlist:
         embed.add_field(
             name=f"📊 Still Watching {len(watchlist)} Stock(s)",
-            value="\n".join(f"🔸 **{t}" for t in watchlist),
+            value="\n".join(f"🔸 **{t}**" for t in watchlist),
             inline=False
         )
         embed.set_footer(text="🎯 You'll no longer receive announcements for this stock")
